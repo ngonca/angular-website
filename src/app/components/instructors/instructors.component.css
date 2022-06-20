@@ -1,0 +1,19 @@
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+ }
+ .fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height:50%;
+    max-height: 280px;
+ }
+ .card {
+    min-height: 300px;
+ }
+ 
+ .card2 {
+    min-height: 660px;
+ }

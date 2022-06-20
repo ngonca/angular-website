@@ -1,0 +1,9 @@
+.hov:hover {
+    background-color: rgb(204, 227, 239);
+}
+
+.iconX {
+    cursor: pointer;
+    float: right;
+    position: relative;
+}

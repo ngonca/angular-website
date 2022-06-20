@@ -12,8 +12,13 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { InstructorsComponent } from './components/instructors/instructors.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { ProfileComponent } from './profilepage/profile/profile.component';
+import { MainComponent } from './components/main/main.component';
+import { SignupComponent } from './profilepage/signup/signup.component';
+import { LoginpageComponent } from './profilepage/loginpage/loginpage.component';
+// used to create fake backend
 
 @NgModule({
   declarations: [
@@ -27,15 +32,22 @@ import { HttpClientModule } from '@angular/common/http';
     QuestionsComponent,
     InstructorsComponent,
     ContactsComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent,
+    MainComponent,
+    SignupComponent,
+    LoginpageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

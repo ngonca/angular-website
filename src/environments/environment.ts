@@ -5,10 +5,9 @@
 export const environment = {
   production: false,
   apiUrl: "http://localhost:3000",
-  mapbox: {
-    accessToken: 'pk.eyJ1IjoibmF6bGlnbmNhIiwiYSI6ImNsM3JyNm9ydjBvdXozZG1zbHNwN3lydG0ifQ.gMyYF8DqNJs-p2H3nSMJLQ'
-  }
+  apiUrl_test: "http://localhost:5000"
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

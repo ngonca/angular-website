@@ -1,0 +1,56 @@
+{
+  "doctors": [
+    {
+      "status": "Proffesor",
+      "age": 20,
+      "id": 1
+    },
+    {
+      "status": "Master",
+      "age": 44,
+      "id": 3
+    },
+    {
+      "status": "Proffesor",
+      "age": 20,
+      "id": 6
+    },
+    {
+      "status": "yönetici-rüya",
+      "age": 19,
+      "id": 7
+    }
+  ],
+  "comments": [],
+  "users": [
+    {
+      "id": 1,
+      "username": "ngumus",
+      "password": "ngumus",
+      "email": "ngumus@gumus.com"
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "username": "ngumus",
+      "password": "ngumus"
+    }
+  ],
+  "nazlis": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "posts": [
+    {
+      "title": "bok gibi post olmuş",
+      "author": "vsdvds",
+      "id": 3
+    },
+    {
+      "title": "şmknjbhvghcfghvjbhkn",
+      "author": "nazli",
+      "id": 5
+    }
+  ]
+}
