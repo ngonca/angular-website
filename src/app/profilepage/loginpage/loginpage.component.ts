@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup,FormControl,Validators} from '@angular/forms';
 import { Login } from 'src/app/models/login';
 
 @Component({
@@ -10,16 +10,14 @@ import { Login } from 'src/app/models/login';
 export class LoginpageComponent implements OnInit {
 
   UserList: Login[] = []; 
-
-  usersForm = new FormGroup({
+  // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  loginForm = new FormGroup({
     username: new FormControl('',[
       Validators.required,
-      Validators.maxLength(10),
-      Validators.minLength(5)
     ]),
     password: new FormControl('',[
       Validators.required,
-      Validators.maxLength(10),
+      Validators.maxLength(12),
       Validators.minLength(5)
     ]),
     id: new FormControl('')
@@ -29,5 +27,9 @@ export class LoginpageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onSubmitloginForm(){
+    console.log(this.loginForm.valid);
+    
+  };
 
 }
