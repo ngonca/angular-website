@@ -5,7 +5,7 @@ import { Doctor } from 'src/app/models/doctor.model';
 import { PostService } from 'src/app/services/post.service';
 import { WinesService } from 'src/app/services/wines.service';
 import { DoctorsService } from 'src/app/services/doctors.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-questions',
@@ -25,7 +25,11 @@ export class QuestionsComponent implements OnInit {
 
   });
   doctorForm = new FormGroup({
-    status: new FormControl(''),
+    status: new FormControl('',[
+      Validators.required,
+      Validators.maxLength(10),
+      Validators.minLength(3)
+    ]),
     age: new FormControl(''),
     id: new FormControl('')
   });
