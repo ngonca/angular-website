@@ -2,7 +2,7 @@
   "doctors": [
     {
       "status": "Proffesor",
-      "age": 20,
+      "age": 29,
       "id": 1
     },
     {
@@ -14,6 +14,11 @@
       "status": "yönetici-rüya",
       "age": 19,
       "id": 7
+    },
+    {
+      "status": "Master",
+      "age": 44,
+      "id": 8
     }
   ],
   "comments": [],
@@ -38,9 +43,9 @@
   },
   "posts": [
     {
-      "title": "bok gibi post olmuş",
+      "title": "şmknjbhvghcfghvjbhkn",
       "author": "vsdvds",
-      "id": 3
+      "id": 1
     }
   ]
 }

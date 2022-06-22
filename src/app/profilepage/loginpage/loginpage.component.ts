@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginpageComponent implements OnInit {
 
-  UserList: Login[] = []; 
+ 
   // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
   loginForm = new FormGroup({
     username: new FormControl('',[
