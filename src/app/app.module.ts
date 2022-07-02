@@ -19,6 +19,7 @@ import { MainComponent } from './components/main/main.component';
 import { SignupComponent } from './profilepage/signup/signup.component';
 import { LoginpageComponent } from './profilepage/loginpage/loginpage.component';
 import { NavProfileComponent } from './profilepage/nav-profile/nav-profile.component';
+import { UsersService } from './services/users.service';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { NavProfileComponent } from './profilepage/nav-profile/nav-profile.compo
     ReactiveFormsModule
   ],
   providers: [
+    UsersService
   
   ],
   bootstrap: [AppComponent]

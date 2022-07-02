@@ -6,21 +6,28 @@
         title="Close Modal">&times;</span>
 
     <!-- Modal Content -->
-    <form class="modal-content animate" [formGroup]="loginForm" (ngSubmit)="onSubmitloginForm()" >
+    <form class="modal-content animate" [formGroup]="loginForm" (ngSubmit)="onSubmitloginForm()">
         <div class="imgcontainer">
             <img src="assets/img/nonbinary.png" alt="Avatar" class="avatar">
         </div>
 
         <div class="container ">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" formControlName="username" required>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" id="psw" placeholder="Enter Password" name="password" formControlName="password"
-                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                required>
+            <div>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" formControlName="username" required>
+                <span [ngStyle]="{'color':color}" *ngIf="isValid('username')">Entered username is invalid</span>
+            </div>
 
-            <button type="submit" [disabled]="!loginForm.valid" value="submit"  >Login</button>
+            <div>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" id="psw" placeholder="Enter Password" name="password" formControlName="password"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required>
+                <span [ngStyle]="{'color':color}" *ngIf="isValid('password')">Entered password is invalid</span>
+
+            </div>
+            <button type="submit" [disabled]="!loginForm.valid" value="submit">Login</button>
 
             <div>
                 <a href="#" class="fb btn">
@@ -32,7 +39,7 @@
                 <a href="#" class="google btn"><i class="fa fa-google fa-fw">
                     </i> Login with Google+
                 </a>
-              
+
             </div>
 
             <label>

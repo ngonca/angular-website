@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -11,20 +11,23 @@ import { UsersService } from 'src/app/services/users.service';
 export class SignupComponent implements OnInit {
 
   successMessage: string = "";
+  color: string = 'red';
 
   signupForm = new FormGroup({
     username: new FormControl('', [
       Validators.required,
+      Validators.maxLength(15)
     ]),
     email: new FormControl('', [
       Validators.required,
+      Validators.email
     ]),
     password: new FormControl('', [
       Validators.required,
       Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
     ]),
     repeatPassword: new FormControl('', [
-       this.passValidator,
+      this.passValidator,
     ]),
     id: new FormControl('')
   });
@@ -33,8 +36,8 @@ export class SignupComponent implements OnInit {
     private router: Router,
     private usersService: UsersService,
     private _activatedRoute: ActivatedRoute) {
-      
-      
+
+
     this.signupForm.controls['password'].valueChanges
       .subscribe(
         x => this.signupForm.controls['repeatPassword'].updateValueAndValidity()
@@ -46,16 +49,13 @@ export class SignupComponent implements OnInit {
 
   onSubmitSignupForm() {
     console.log(this.signupForm.valid);
+    this.register();
     this.router.navigate(['/profile']);
   };
-
-
-
 
   isValid(controlName: any) {
     return this.signupForm.get(controlName)?.invalid && this.signupForm.get(controlName)?.touched;
   };
-
 
 
   passValidator(control: AbstractControl) {
@@ -76,15 +76,35 @@ export class SignupComponent implements OnInit {
     return null;
   }
 
-
-
-
-
   register() {
     console.log(this.signupForm.value);
-    //this.usersService.onSubmitSignupForm(this.signupForm.value).subscribe((data) => {
-      //this.successMessage = 'Registiration succees',
+    if (this.signupForm.valid) {
+      this.usersService.submitSignup(this.signupForm.value)
+        .subscribe(
+          data => {
+            this.successMessage = "Signup success"
+          },
+          error => {
+            this.successMessage = "some error"
+          }
+        )
+    }
+
+
+
+
+
+
+
+
+
+
+    
   }
+
+
+
+
 
 
 
